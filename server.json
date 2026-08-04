@@ -14,23 +14,5 @@
       "type": "streamable-http",
       "url": "https://jobkeepr.com/mcp"
     }
-  ],
-  "packages": [
-    {
-      "registryType": "npm",
-      "identifier": "jobkeepr-mcp",
-      "version": "1.0.0",
-      "transport": {
-        "type": "stdio"
-      },
-      "environmentVariables": [
-        {
-          "name": "JOBKEEPR_API_KEY",
-          "description": "API key from Jobkeepr Settings > API Keys",
-          "isRequired": true,
-          "isSecret": true
-        }
-      ]
-    }
   ]
 }
