@@ -1,0 +1,51 @@
+{
+  "name": "jobkeepr-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Jobkeepr — let an AI agent read and manage jobs, customers, scheduling, estimates and invoices for a field service business",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "jobkeepr-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('dist/index.js', 0o755)\"",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "jobkeepr",
+    "field-service",
+    "fsm",
+    "scheduling",
+    "invoicing",
+    "contractor",
+    "crm",
+    "ai-agent"
+  ],
+  "homepage": "https://jobkeepr.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dandyer/jobkeepr-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dandyer/jobkeepr-mcp/issues"
+  },
+  "author": "Jobkeepr",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
+}

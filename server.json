@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.jobkeepr/jobkeepr",
+  "title": "Jobkeepr",
+  "description": "Field service management for small contractor crews. Read and manage jobs, customers, scheduling, estimates, invoices and payments.",
+  "version": "1.0.0",
+  "websiteUrl": "https://jobkeepr.com",
+  "repository": {
+    "url": "https://github.com/dandyer/jobkeepr-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://jobkeepr.com/mcp"
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "jobkeepr-mcp",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "JOBKEEPR_API_KEY",
+          "description": "API key from Jobkeepr Settings > API Keys",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
