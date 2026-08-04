@@ -2,6 +2,7 @@
   "name": "jobkeepr-mcp",
   "version": "1.0.0",
   "description": "MCP server for Jobkeepr — let an AI agent read and manage jobs, customers, scheduling, estimates and invoices for a field service business",
+  "mcpName": "com.jobkeepr/jobkeepr",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
