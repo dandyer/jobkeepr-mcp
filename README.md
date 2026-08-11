@@ -23,6 +23,10 @@ It supports OAuth, so you sign in with your normal Jobkeepr login and approve ac
 
 **stdio (this package).** For clients that only speak stdio, this bridges to the same server using an API key.
 
+> **This package is not on npm.** Install it straight from GitHub using the
+> `github:dandyer/jobkeepr-mcp` specifier shown below. Plain `npx jobkeepr-mcp` will not
+> resolve. npm compiles the TypeScript for you on install, so there is nothing extra to run.
+
 ## Setup
 
 Create an API key in Jobkeepr under **Settings → API Keys**. It's shown once, so copy it then.
@@ -36,7 +40,7 @@ Add to `claude_desktop_config.json`:
   "mcpServers": {
     "jobkeepr": {
       "command": "npx",
-      "args": ["-y", "jobkeepr-mcp"],
+      "args": ["-y", "github:dandyer/jobkeepr-mcp"],
       "env": {
         "JOBKEEPR_API_KEY": "jk_live_your_key_here"
       }
@@ -48,7 +52,7 @@ Add to `claude_desktop_config.json`:
 ### Claude Code
 
 ```bash
-claude mcp add jobkeepr --env JOBKEEPR_API_KEY=jk_live_your_key_here -- npx -y jobkeepr-mcp
+claude mcp add jobkeepr --env JOBKEEPR_API_KEY=jk_live_your_key_here -- npx -y github:dandyer/jobkeepr-mcp
 ```
 
 Or connect to the remote endpoint directly:
