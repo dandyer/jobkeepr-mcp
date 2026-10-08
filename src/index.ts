@@ -73,11 +73,18 @@ async function main() {
   );
 
   // Pass tool definitions through untouched so titles, annotations and schemas
-  // stay exactly as the server declares them. With no connection, report an
-  // empty set rather than failing: an introspecting client gets a valid answer
-  // and the reason is in the server instructions.
+  // stay exactly as the server declares them. With no connection, list the
+  // public catalog so registries that inspect without credentials still see
+  // the real tools; calling one returns the setup help. If the catalog is
+  // unreachable too, report an empty set rather than failing.
   server.setRequestHandler(ListToolsRequestSchema, async () => {
-    if (!upstream) return { tools: [] };
+    if (!upstream) {
+      try {
+        const res = await fetch(`${BASE_URL}/mcp/tools.json`);
+        if (res.ok) return { tools: (await res.json()).tools };
+      } catch {}
+      return { tools: [] };
+    }
     const { tools } = await upstream.listTools();
     return { tools };
   });
