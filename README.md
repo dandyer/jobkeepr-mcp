@@ -70,23 +70,24 @@ claude mcp add --transport http jobkeepr https://jobkeepr.com/mcp
 | `get_business_context` | Business name, timezone, working hours, and today's date with resolved ranges for "this week", "last month" and so on |
 | `get_jobs` | Jobs filtered by date, status, customer, type or source |
 | `get_customers` | Search customers, optionally with job counts and totals |
-| `get_schedule` | Scheduled jobs and open time slots |
+| `get_schedule` | Scheduled jobs, calendar events, and open time slots |
 | `get_estimates` | Estimates and their status |
 | `get_invoices` | Invoices and unpaid balances |
 | `get_payments` | Payments received |
 | `get_line_items` | Line items across jobs, for margin and mix analysis |
-| `get_reference_data` | Job types, job sources, and the price catalog |
+| `get_reference_data` | Job types, lead sources, and the price catalog |
 
 ### Writing
 
 | Tool | What it does |
 |---|---|
 | `create_job` | Book a job for a customer |
+| `create_event` | Add a calendar event that is not a job, like time off or a walkthrough |
 | `create_customer` | Add a customer |
 | `create_estimate` | Create an estimate |
 | `create_catalog_item` | Add a service or product to the price catalog |
 | `add_line_items` | Add billable line items to a job |
-| `set_job_source` | Record where a job came from |
+| `set_customer_source` | Record how a customer found the business |
 | `reschedule_job` | Move a job to a new date or time |
 | `cancel_job` | Cancel a scheduled job |
 | `close_jobs` | Mark jobs complete |
